@@ -1,0 +1,39 @@
+       		 Sequences Practice Problems
+
+1. Use Random Function (( RANDOM )) to get Single Digit
+-echo $(($RANDOM%10))
+i/p = bash random.sh
+o/p = 5
+
+2. Use Random to get Dice Number between 1 to 6
+- echo $(($RANDOM %6 + 1))
+i/p = bash random.sh
+o/p = 5(numbers between 1 to 6) 
+
+3. Add two Random Dice Number and Print the Result
+-#!/bin/bash -x
+a=$((RANDOM%10))
+b=$((RANDOM%10))
+((sum=a+b))
+echo $sum
+i/p = bash random.sh
+o/p = 13
+
+5. unit conversion
+#!/bin/bash -x
+echo "42 inches in feet"
+conv1=$((42/12))
+echo $conv1
+a=$((60*3))
+b=$((40*3))
+area=$((a*b))
+echo "60 feet * 40 feet in meters"
+echo $area
+result=$((area*25))
+echo $result
+i/p = bash random.sh
+o/p = 42 inches in feet
+3
+60 feet * 40 feet in meters
+21600
+540000

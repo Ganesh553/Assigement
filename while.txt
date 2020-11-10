@@ -1,0 +1,39 @@
+   While Loop
+
+1)code print 
+for(( i=1; i<=$1; i++ ))
+do
+        if [ $i -le $((2**$1)) ]
+        then
+                echo $((i*2))
+        fi
+done
+i/p = bash whileloop.sh 6
+o/p = 1 2 .... 128
+
+2)Magic number 
+#!bin/bash -x
+echo -p"Enter the number between 1 to 100"
+read n
+random=$((RANDOM%100+1))
+if [ $n -lt $random ]
+then
+    echo "Magic number $n"
+else
+    echo "Enter number is out of 100"
+fi
+i/p = -p Enter the number between 1 to 100  25
+o/p = Magic number
+
+3)Extend the Flip Coin problem till either Heads or Tails wins 11 times.
+#!/bin/bash -x
+coin=$((RANDOM%2))
+if [ $coin -eq 1 ]
+then
+    echo "head"
+else
+    echo "tail"
+fi
+i/p = bash coin.sh
+i/p = head
+tail

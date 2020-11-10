@@ -1,0 +1,92 @@
+Repetition Practice Problems with for loop
+1)Code 
+power.sh
+#!/bin/bash -x
+echo "enter root"
+read root
+for (( i=0;i<=root;i++ ))
+do
+    val=$((2**$i))
+    echo $i $val
+done
+
+i/p = enter root
+o/p = 
+0 1
+1 2
+2 4
+3 8
+4 16
+5 32
+6 64
+
+3)prime
+echo "enter number is prime or not"
+read num
+for((i=2; i<=num/2; i++))
+do
+  if [ $((num%i)) -eq 0 ]
+  then
+    echo "$num is not a prime number."
+    exit
+  fi
+done
+echo "$num is a prime number."
+
+i/p =-p enter number is prime or not 5
+o/p = 5 is prime number 
+
+4)Prime number in th range 
+echo 'Enter no'
+read x
+n=2
+while [ $n -le $x ]
+do
+i=2
+count=1
+while [ $i -lt $n ]
+do
+if [ (($n % $i)) -eq 0 ]
+then
+count=0
+break
+fi
+i=`expr $i + 1`
+done
+
+if [ $count -eq 1 ]
+then
+echo "$n is Prime"
+fi
+n=$(($n + 1))
+done
+i/p = Enter no 5
+o/p = 2 is prime number
+      3 is prime number
+      5 is prime number 
+
+
+5)factorial
+echo -p "Enter the factorial number"
+read num
+fact=1
+while [ $num -gt 1 ]
+do
+fact=$((fact*num))
+num=$((num-1))
+done
+echo $fact
+i/p = -p "Enter the factorial number" 5
+o/p = 120 
+
+6)Write a program to compute Factors of a number N using prime factorization method.
+#!/bin/bash
+num=$1
+for (( i=2; i<=$1; i++ ));do
+    while [ $((num%$i)) == 0 ];do
+        echo $i
+        num=$((num/$i))
+    done
+done
+a)i/p = bash primeFactor 24
+o/p = 2 2 2 3

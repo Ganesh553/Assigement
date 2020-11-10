@@ -1,0 +1,52 @@
+1)for ((i = 0; i < 11; i++)); do
+    arrayName[i]=$(($RANDOM % 200 + 100))
+done
+echo "${arrayName[*]}"
+max=${arrayName[0]}
+min=${arrayName[0]}
+
+for i in "${arrayName[@]}"
+do
+    if [[ "$i" -gt "$max" ]]; then
+        max="$i"
+    fi
+
+    if [[ "$i" -lt "$min" ]]; then
+        min="$i"
+    fi
+done
+
+echo "Max is: $max"
+echo "Min is: $min"
+
+o/p = 291 177 221 237 199 127 213 124 243 187 252
+Max is: 291
+Min is: 124
+
+2)for ((i = 0; i < 11; i++)); do
+    arrayName[i]=$(($RANDOM % 200 + 100))
+done
+echo "${arrayName[*]}"
+
+printf "%s\n" "${arrayName[@]}" | sort -n | tail -2
+printf "%s\n" "${arrayName[@]}" | sort -n | head -2
+
+o/p =  bash arrayAssort.sh
+285 249 159 268 260 162 215 250 154 197 169
+268
+285
+154
+159
+
+3)#!/bin/bash
+array=()
+num=$1
+for (( i=2; i<=$1; i++ ));do
+    while [ $((num%$i)) == 0 ];do
+        array+="$i "
+        num=$((num/$i))
+    done
+done
+echo "${array[@]}"
+o/p =  bash arrayPrime.sh 24
+2 2 2 3

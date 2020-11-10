@@ -1,0 +1,52 @@
+1)#! bin/bash -x
+declare -A a
+a=()
+count=0
+for i in `seq 10`
+do
+random=$((RANDOM%6+1))
+a+="$random "
+done
+echo "${a[@]}"
+
+
+ary=(`printf '%s\n' "${a[@]}"|sort`)
+
+echo ${ary[@]}
+o/p = try to complete the code but not getting output
+
+2)#! /bin/bash -x
+#Multiline Declare and Definition
+declare -A Array
+Array[jan/92]=0
+Array[feb/92]=0
+Array[mar/92]=0
+Array[apr/92]=0
+Array[may/92]=0
+Array[jun/92]=0
+Array[july/92]=0
+Array[agu/92]=0
+Array[sep/92]=0
+Array[oct/92]=0
+Array[nov/92]=0
+Array[dec/92]=0
+Array[jan/93]=0
+Array[feb/93]=0
+Array[mar/93]=0
+Array[apr/93]=0
+Array[may/93]=0
+Array[jun/93]=0
+Array[july/93]=0
+Array[agu/93]=0
+Array[sep/93]=0
+Array[oct/93]=0
+Array[nov/93]=0
+Array[dec/93]=0
+
+for i in `seq 50`
+do
+Array[value]+=":$i"
+done
+echo "${Array[@]}"
+
+o/p = try to complete the code but not getting output  

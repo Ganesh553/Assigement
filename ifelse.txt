@@ -1,0 +1,285 @@
+          Selection Practice Problems with if & else
+
+1)#!/bin/bash -x
+max=100
+r=$(((RANDOM%100)+105))
+echo $r
+if [ $r -gt $max ]
+then
+echo "$r is maximun"
+else
+echo "$r is minimun"
+fi
+i/p = bash ifelse.sh
+o/p = 132 is maximun
+
+2) leap year
+echo -n "Enter year (YYYY): "
+read y
+a=$(($y%4))
+b=$(($y%100))
+c=$(($y%400))
+if [ $a -eq 0 -a $b -ne 0 -o $c -eq 0 ]
+then
+echo "$y is leap year"
+else
+echo "$y is not a leap year"
+fi
+
+i/p= Enter year (YYYY): 2004
+o/p= 2004 is leap year
+o/p= 2100 is not a leap year
+
+3)read -p "Enter Date: " date
+read -p "Enter Month: " Month
+if [ $Month -ge 3 -a $Month -le 6 ]
+then
+if [ $date -lt 20 ]
+then
+ echo "true"
+else
+echo "day not within june 20"
+fi
+else
+echo "false"
+fi
+
+i/p = bash date.sh
+o/p = Enter Date: 15
+Enter Month: 4
+true
+o/p = Enter Date: 20
+Enter Month: 5
+day not within 21
+
+
+
+4)#!/bin/bash -x
+coin=$((RANDOM%2))
+if [ $coin -eq 1 ]
+then
+    echo "head"
+else
+    echo "tail"
+fi
+i/p = bash coin.sh
+o/p = tail
+
+				Selection Practice Problems with if, elif and else
+
+1)#!/bin/bash
+read -p "Enter a number between 1 and 3 inclusive > " character
+if [ "$character" = "1" ]; then
+    echo "You entered one."
+elif [ "$character" = "2" ]; then
+    echo "You entered two."
+elif [ "$character" = "3" ]; then
+    echo "You entered three."
+else
+    echo "You did not enter a number between 1 and 3."
+fi
+o/p = bash ifelse1.sh
+Enter a number between 1 and 3 inclusive > 1
+You entered one.
+
+b.bash ifelse1.sh
+Enter a number between 1 and 3 inclusive > 6
+You did not enter a number between 1 and 3.
+
+2)#!/bin/bash -x
+echo -p "Enter number => "
+read n
+if [ $n -eq 1 ]; then
+echo "Sunday"
+elif [ $n -eq 2 ]; then
+echo "Monday"
+elif [ $n -eq 3 ]; then
+echo "Tuesday"
+elif [ $n -eq 4 ]; then
+echo "Wednesday"
+elif [ $n -eq 5 ]; then
+echo "Thursday"
+elif [ $n -eq 6 ]; then
+echo "Friday"
+elif [ $n -eq 7 ]; then
+echo "Saturday"
+else
+echo "enter value between 1 to 7"
+fi
+
+o/p =  bash ifelse.sh
+-p Enter number =>
+5
+Thursday
+b)-p Enter number =>
+9
+enter value between 1 to 7
+
+5)#! bin/bash -x
+echo "enter number like 1, 10, 100"
+read n
+if [ $n -le 9 ]
+then
+echo "Unit or one Digit 1"
+elif [ $n -le 99 ]
+then
+echo "Tens or Digit 2"
+elif [ $n -eq 999 ]
+then
+echo "Hundreds or Digits 3"
+else
+echo "enter number within 999"
+fi
+
+o/p = bash unit.sh
+enter number like 1, 10, 100
+55
+Tens or Digit 2
+
+b)  bash unit.sh
+enter number like 1, 10, 100
+5
+Unit or one Digit 1
+
+4)echo "Enter a "
+read a
+echo "Enter b "
+read b
+echo "Enter c "
+read c
+equ1=$(((a+b)*c))
+echo $equ1
+equ2=$(((a%b)+c))
+echo $equ2
+equ3=$(((c+b)/b))
+echo $equ3
+equ4=$(((a*b)+c))
+echo $equ4
+if [ $equ1 -gt $equ2 -a  $equ1 -gt $equ3 -a $equ1 -gt $equ4 ];
+then
+echo "Eqution $equ1 max"
+elif [ $equ2 -gt $equ1 -a  $equ2 -gt $equ3 -a $equ2 -gt $equ4 ];
+then
+echo "Eqution 2 $equ2"
+elif [ $equ3 -gt $equ1 -a  $equ3 -gt $equ2 -a $equ3 -gt $equ4 ];
+then
+echo "Eqution 3 $equ3"
+elif [ $equ4 -gt $equ1 -a  $equ4 -gt $equ2 -a $equ14 -gt $equ3 ];
+then
+echo "Eqution 4 $equ4"
+fi
+if [ $equ1 -lt $equ2 -a  $equ1 -lt $equ3 -a $equ1 -lt $equ4 ];
+then
+echo "Eqution $equ1 minimum"
+elif [ $equ2 -lt $equ1 -a  $equ2 -lt $equ3 -a $equ2 -lt $equ4 ];
+then
+echo "Eqution $equ2 minimum"
+elif [ $equ3 -lt $equ1 -a  $equ3 -lt $equ2 -a $equ3 -lt $equ4 ];
+then
+echo "Eqution $equ3 minimum"
+elif [ $equ4 -lt $equ1 -a  $equ4 -lt $equ2 -a $equ14 -lt $equ3 ];
+then
+echo "Eqution $equ4 minimum"
+fi
+o/p = $ bash ifelse2.sh
+Enter a
+5
+Enter b
+6
+Enter c
+5
+First 55
+Second 10
+Third 1
+Fourth 35
+Eqution 55 max
+Eqution 1 minimum
+
+
+				Selection Practice Problems with case statement
+
+1)#!/bin/bash
+
+read -p "Enter a number between 1 and 3 inclusive > " character
+case $character in
+    1 ) echo "You entered one." ;;
+    2 ) echo "You entered two." ;;
+    3 ) echo "You entered three." ;;
+    * ) echo "You did not enter a number between 1 and 3"
+esac
+
+o/p = bash case1.sh
+Enter a number between 1 and 3 inclusive > 1
+You entered one.
+
+b.bash case1.sh
+Enter a number between 1 and 3 inclusive > 6
+You did not enter a number between 1 and 3.
+
+2)echo "enter a number"
+read n
+case $n in
+1) echo "Sunday" ;;
+2) echo "Monday" ;;
+3) echo "Tuesday" ;;
+4) echo "Wednesday" ;;
+5) echo "Thursday" ;;
+6) echo "Friday" ;;
+7) echo "Saturday" ;;
+*) echo "enter value between 1 to 7" ;;
+esac
+
+o/p= bash case.sh
+enter a number
+8
+enter value between 1 to 7
+
+bash case.sh
+enter a number
+1
+Sunday
+
+3)#! bin/bash -x
+echo "enter number to convert like 1,10,100 ect"
+read n
+case $n in
+1) echo "Unit or 1 Digit" ;;
+10) echo "Tens or 2 Digits" ;;
+100) echo "Hunderds or 3 Digits " ;;
+*) echo "enter display number" ;;
+esac
+o/p =  bash unitcase.sh
+enter number to convert like 1,10,100 ect
+100
+Hunderds or 3 Digits
+
+b) bash unitcase.sh
+enter number to convert like 1,10,100 ect
+5
+enter display number
+
+
+
+4)Unit conversion 
+#!/bin/bash
+echo "enter number"
+read n
+read -p "Enter a number between 1 fet to inc and 2 in to fet inclusive > " select
+case $select in
+    1 ) echo "$(($n*12)) in inch" ;;
+    2 ) echo "$(($n/12)) in feet" ;;
+    * ) echo "You did not enter a number between 1 and 3"
+esac
+o/p = $ bash case1.sh
+enter number
+12
+Enter a number between 1 fet to inc and 2 in to fet inclusive > 1
+144 in inch
+b.$ bash case1.sh
+enter number
+12
+Enter a number between 1 fet to inc and 2 in to fet inclusive > 2
+1 in feet
+
+
+

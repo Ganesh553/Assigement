@@ -1,0 +1,59 @@
+2) Move files from one folder to respective folder?
+-  mv abc.txt abc/
+- mv def.txt def/
+ 
+3) Appending date to extension .log.1
+-for file in *.log.1; 
+	do 
+	mv "$file" "${file}_$(date +"%d-%m-%Y")"; 
+done
+
+4) Print last 4 frequently access urls count in sortes order from /var/log/httpd/access.log
+- $ cat access.log | awk '{print $11}' | sort -c | uniq | tail -4
+
+5)print list of last 4 frequently access unique urls at particular hours from /var/log/httpd/access.log
+- $ cat access.log | awk '{print $4" "$11}' | sort
+ 
+6) Print list of web response code count in the unique sorted order at specific hour
+- $ cat access.log | awk '{print $9, $10}' | sort -c | head -5
+
+7) Print list of last 10 unique sorted IP from /var/log/httpd/access.log
+- $ cat access.log | awk '{print $16}' | sort | uniq | tail -10
+
+9) Check if a folder exists or not. IF it's not persent, creat it
+- if [ -d "terminal_command/linux_terminal/" ]
+  then
+      echo "File exists."
+  else
+      mkdir foldername
+      echo "new Folder is created"
+  fi
+
+10)Execute command "hello" and "ls" and check its execute status and print whethere command executed successful or not.
+- echo "hello"
+  echo $?
+
+11) Set environment usersecret="dH34xJaa23" if its already not
+- printenv
+  export usersecreat="dH34xJaa23"
+
+12) Find word "systemd" from all log file in the folder
+-$ grep -x "systemd" /.../*.txt.
+
+13) Create process list table display pid, ppid, common name, % of memory, % of cpu utilization
+- $ ps -elf | awk '{print $2, $3, $6}'
+ 
+12) Data analysis/manipulation (Awk)
+i)- $cat data.csv | awk '{print $2,  $7, $4}'
+ii)-$ cat data.csv | grep -i captain | awk '{sum+=$7} END {print sum/NR}'
+iii)-$ cat data.csv | awk '{print $3, $5}'
+iv)-$ cat data.csv | awk '{sum+=$4} END {print sum/NR}'
+
+14) Find the difference between original file and the updated file. 
+   Apply changes to the orignal file.
+- mkdir orignal updated
+ cp 'original-file.sh' orignal/
+ cp 'updated-file.sh' updated/
+ diff -qr orignal/ updated/
+[-q the -q switch tells diff to report only when files differ.]
+[-r switch to read the subdirectories as well]
