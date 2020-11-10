@@ -19,6 +19,26 @@ echo $sum
 i/p = bash random.sh
 o/p = 13
 
+4.for i in `seq 5`
+do
+avg=$i
+rand=$((RANDOM%99+10))
+echo $rand
+count=$((count+$rand))
+done
+echo "SUM=> $count"
+((avg=$count/$avg))
+echo "Average=> $avg"
+
+o/p= bash avg.sh
+24
+56
+64
+104
+40
+SUM=> 288
+Average=> 57
+
 5. unit conversion
 #!/bin/bash -x
 echo "42 inches in feet"
