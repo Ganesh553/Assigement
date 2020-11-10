@@ -56,4 +56,4 @@ else
 fi
 
 a.i/p = 7, o/p = Number is palindrome
-b.i/p = 55, o/p = Number is NOT palindrome 
+b.i/p = 55, o/p = Number is palindrome 
