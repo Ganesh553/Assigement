@@ -60,3 +60,31 @@ echo "$pass is valid password"
 else
 echo "It may not contail Uppercas or numberic or special character"
 fi
+o/p = 
+ bash Day14.sh
+First name validation
+-p Enter You First name =>
+Ganesh
+6
+valid Ganesh
+Last name validation
+-p Enter You Last Name=>
+Kumar
+5
+valid Kumar
+Mail validation
+enter mailid
+ganes@gami.com
+Email address ganes@gami.com is valid.
+Phon number validation
+Enter Phone number
+8974563212
+10
+91 8974563212 vaild phone number
+-penter password =>
+ASsd#sccdf45
+12
+valid
+ASsd#sccdf45 is valid password
+
+
